@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Search (props) {
+function Item(props) {
     return (
         <div>
-            <input type="text"/>
+            
         </div>
     )
 }
 
-Search.propTypes = {
+Item.propTypes = {
 
 }
 
-export default Search
+export default Item

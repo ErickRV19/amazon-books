@@ -15,7 +15,7 @@ function Menu (props) {
                     <Search />
                 </div>
                 <div className="actions">
-                    <button className="button btn-blue">+ Añadir nuevo libro</button>
+                    <button className="button btn-blue">Añadir nuevo libro</button>
                 </div>
             </div>
         </div>
