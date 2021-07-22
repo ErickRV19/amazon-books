@@ -7,7 +7,19 @@ import PanelAdd from "../PanelAdd/PanelAdd";
 
 class Menu extends React.Component {
     constructor(props){
-        super(props)
+        super(props);
+
+        this.state = { newItemPanel: false };
+
+        this.add=this.add.bind(this);
+    }
+
+    add(){
+
+        this.setState({newItemPanel:true});
+
+        console.log('hola');
+
     }
 
     render(){
@@ -27,7 +39,12 @@ class Menu extends React.Component {
                     <button onClick={this.add} className="button btn-blue">Añadir nuevo libro</button>
                 </div>
             </div>
-            <PanelAdd />
+            {
+                (this.state.newItemPanel)?
+                <PanelAdd />
+                :
+                ''
+            }
         </div>
     )
 }
