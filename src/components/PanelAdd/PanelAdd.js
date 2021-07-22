@@ -24,12 +24,15 @@ class PanelAdd extends React.Component {
         this.setState({rating:e.target.value});
     }
 
-    onSubmit(e){
+    onSubmit=(e)=>{
         e.preventDefault();
         const title=this.state.title;
         const image=this.state.image;
         const rating=this.state.rating;
 
+
+        this.props.onadd({title:title, image:image, rating:rating});
+        this.props.oncancel();
     }
 
 

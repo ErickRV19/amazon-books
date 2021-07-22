@@ -18,7 +18,16 @@ class App extends React.Component {
         {id:3, rating:5, title:'El principito', image:'libro04.jpg'},
         {id:4, rating:1, title:'Sobrenatural', image:'libro05.jpg'}
       ]
-    }
+    };
+  }
+
+  onAdd=(item)=>{
+    let temp=[...this.state.books];
+    const id=temp[temp.length-1].id ++;
+    item['id']=id;
+    temp.push(item);
+
+    this.setState({books:[...temp]});
   }
 
 
@@ -26,7 +35,7 @@ class App extends React.Component {
 
     return(
       <div className="app">
-      <Menu title="Bookstore"/>
+      <Menu title="Bookstore" onadd={this.onAdd}/>
       <List items={this.state.books} />
       
       </div>
