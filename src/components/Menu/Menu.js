@@ -1,25 +1,36 @@
 import React from 'react';
+
 import Search  from '../SearchBar/Search';
 import './Menu.css';
+import PanelAdd from "../PanelAdd/PanelAdd";
 
 
-function Menu (props) {
+class Menu extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
+    render(){
+
+    
     return (
         <div className="container">
             <div className="subcontainer">
                 <div className="logo">
-                    {props.title}
+                    {this.props.title}
 
                 </div>
                 <div className="search">
                     <Search />
                 </div>
                 <div className="actions">
-                    <button className="button btn-blue">Añadir nuevo libro</button>
+                    <button onClick={this.add} className="button btn-blue">Añadir nuevo libro</button>
                 </div>
             </div>
+            <PanelAdd />
         </div>
     )
+}
 }
 
 export default Menu
