@@ -76,6 +76,7 @@ class App extends React.Component {
     const res = temp.filter(item => item.id != id);
     this.setState({books: [...res]});
     this.initBooks();
+
   }
 
   render(){
@@ -83,8 +84,8 @@ class App extends React.Component {
     return(
       <div className="app">
       <Menu title="Bookstore" onadd={this.onAdd} onsearch={this.onSearch}/>
-      <List items={this.state.copyBooks} o
-            nupdaterating={this.onUpdateRating} 
+      <List items={this.state.copyBooks} 
+            onupdaterating={this.onUpdateRating} 
             onremove={this.onRemove}/>
       
       </div>
