@@ -37,6 +37,10 @@ class Item extends React.Component {
 
         this.props.onupdaterating({id:this.state.id, title:this.state.title, image:this.state.image, rating:rating})
     }
+    onremove=e=>{
+        this.props.onremove(this.props.id);
+        
+    }
 
     render(){    
 
@@ -63,7 +67,7 @@ class Item extends React.Component {
                     <option value="5">5</option>
                 </select>
                 <div className="actions">
-                    <button>Eliminar</button>
+                    <button onClick={this.onremove}>Eliminar</button>
                 </div>
             </div>
         </div>
